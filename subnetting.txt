@@ -1,0 +1,11 @@
+Subnetting an IP Network is done primarily for better utilization of available IP address space, and routing purpose. Other reasons include better organization, use of different physical media (such as Ethernet, WAN, etc.),  and securing network resources.
+
+A subnet mask enables you to identify the network and node parts of the address. The network bits are represented by the 1s in the mask, and the node bits are represented by the 0s. A logical AND operation between the IP address and the subnet mask provides the Network Address.
+
+ For example, using our test IP address and the default Class C subnet mask, we get:
+
+192.189.210.078: 1100 0000.1011 1101.1101 0010.0100 1110 Class C IP Address
+
+255.255.255.000: 1111 1111.1111 1111.1111 1111.0000 0000 Default Class C subnet mask
+
+192.189.210.0         1100 0000 1011 1101 1101 0010 0000 0000
