@@ -1,0 +1,90 @@
+When IP packets travel over the Internet, routing information is exchanged between the devices that control the flow of information over the Internet. These devices are known as routers, and they use the IP address as the basis for controlling the traffic. These devices need to talk the same language to function properly, though they belong to different administrative domains. For example, one router may be in Newyork(US), and the receiving router may be in London (UK). It is necessary that a routing protocol is followed for smooth flow of traffic. Given below are the widely used routing protocols for routing Internet traffic:
+
+    RIP v1
+
+    RIP v2
+
+    OSPF
+
+    IGRP
+
+    EIGRP
+
+    BGP
+
+Notations used: Routing Information Protocol (RIP), Open Shortest Path First (OSPF), Interior Gateway Routing Protocol (IGRP), Enhanced Interior Gateway Routing Protocol (EIGRP), and Border Gateway Protocol (BGP). 
+
+One often get confused between a routing protocol and a routed protocol. A routing protocol such as RIP is used to route information packets over the Internet, where as a routed protocol such as IP (or IPX) is the payload (contains data) that get routed from source to the destination.
+
+Routing protocols are primarily distinguished into three types:
+
+    Distance Vector Protocols
+
+    Link State Protocols
+
+    Hybrid Protocols
+
+RIP is an example of distance vector protocol. IS-IS is an example of Hybrid protocol, and OSPF is an example of Link State Protocol.
+
+The table below provides the routing protocol used with different routed protocols:
+
+Routing Protocol
+	
+
+Routed Protocol
+
+RIP, OSPF,IS-IS, BGP,EIGRP
+	
+
+IP
+
+RIP, NLSP, EIGRP
+	
+
+IPX
+
+RTMP, EIGRP
+	
+
+AppleTalk
+
+The list of routed, and routing protocols given in the above table is not complete, and given to serve as an example only.
+
+Routing Metric: This is a fundamental measure that routing protocols use for determining appropriate route to deliver packets. Each routing protocol uses its own measure of metric, and a sample of routing metrics used by different routing protocols is given below:
+
+Routing Protocol
+	
+
+Metric
+
+RIPv2
+	
+
+Hop count
+
+EIGRP
+	
+
+Bandwidth, Delay, Load, Reliability, and MTU
+
+OSPF
+	
+
+Cost (Higher bandwidth indicates lower cost)
+
+IS-IS
+	
+
+Cost
+
+The best route in RIP is determined by counting the number of hops required to reach the destination. A lower hop count route is always preferred over a higher hop count route. One disadvantage of using hop count as metric is that if there is a route with one additional hop, but with significantly higher bandwidth, the route with smaller bandwidth is taken. 
+
+Link State vs. Distance Vector
+
+Distance Vector routing protocols usually send their entire routing table to their nearest neighbors at regular intervals. A router that receives several such routing tables filter the routes and arrive at its own and retransmits it to its neighbouring routers. There will some period of time where different routers hold non-optimized routes initially. After some time, known as convergence time, a final routing table is arrived at by all the routers. A faster convergence time results in a stable network. 
+
+RIP, as mentioned earlier uses hop count as the metric for computing a route to a given destination. Other Distance Vector routing protocols, such as IGRP, improve on this by using hop count, bandwidth, current load, cost, and reliability to determine the best path.
+
+Link State routing protocols usually send only the routing changes to every other router within their area. Unlike Distance Vector, routers using Link State routing protocols maintain a picture of the entire network. A router can use this network wide information to determine the best route for traffic.
+
+
