@@ -1,0 +1,37 @@
+An IP address is a unique logical identifier for a node or host connection on an IP network. An IP address is a 32 bit binary number, and represented as 4 decimal values of 8 bits each. The decimal values range from 0 to 255. This is known as "dotted decimal" notation.
+
+Example: 192.189.210.078
+
+Every IP address consists of network identifier and node identifier. The IP network is divided based on Class of network. The class of network is determined by the leading bits of the IP address as shown below. 
+Address Classes
+
+There are 5 different address classes. You can determine which class any IP
+address is in by examining the first 4 bits of the IP address.
+
+    Class A addresses begin with 0xxx, or 1 to 126 decimal.
+
+    Class B addresses begin with 10xx, or 128 to 191 decimal.
+
+    Class C addresses begin with 110x, or 192 to 223 decimal.
+
+    Class D addresses begin with 1110, or 224 to 239 decimal.
+
+    Class E addresses begin with 1111, or 240 to 254 decimal.
+
+Addresses beginning with 01111111, or 127 decimal, are reserved for loopback and for internal testing on a local machine. Class D addresses are reserved for multicasting. Class E addresses are reserved for future use. They should not be used for host addresses.
+
+Now we can see how the Class determines, by default, which part of the IP address belongs to the network (N) and which part belongs to the Host/node (H).
+
+    Class A: NNNNNNNN.HHHHHHHH.HHHHHHHH.HHHHHHHH
+
+    Class B: NNNNNNNN.NNNNNNNN.HHHHHHHH.HHHHHHHH
+
+    Class C: NNNNNNNN.NNNNNNNN.NNNNNNNN.HHHHHHHH
+
+In the example, 192.189.210.078 is a Class C address so by default the Network part of the address (also known as the Network Address) is defined by the first three octets (192.189.210.XXX) and the node part is defined by the last one octets (XXX.XXX.XXX.078).
+
+In order to specify the network address for a given IP address, the node section is set to all "0"s. In our example, 192.189.210.0 specifies the network address for 192.189.210.078. When the node section is set to all "1"s, it specifies a broadcast that is sent to all hosts on the network. 192.189.210.255 specifies the broadcast address.
+Private Subnets
+
+There are three IP network addresses reserved for private networks. The addresses are 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16. They can be used by anyone setting up internal IP networks, such as an intranet. Internet routers never forward the private addresses over the public Internet.
+
