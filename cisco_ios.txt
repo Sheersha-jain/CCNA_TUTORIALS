@@ -1,0 +1,95 @@
+Cisco IOS (short for Internetwork Operating System) is the software used on a majority of Cisco Systems routers and switches.  IOS consists of routing, switching, internetworking and telecommunications functions in a multitasking operating system. 
+
+Cisco IOS has uses command line interface (CLI), and provides a fixed set of multiple-word commands. A Cisco IOS command line interface can be accessed through either a console connection, modem connection, or a telnet session. The set of commands available at any particular level is determined by the "mode" and the privilege level of the current user. 
+
+Cisco IOS follows a command hierarchy, with each level offering different set of commands  All commands are assigned a privilege level, from 0 to 15, and can only be accessed by users with the necessary privilege. Through the CLI, the commands available to each privilege level can be defined. 
+
+Some of the widely used command hierarchy levels are given below:
+
+User EXEC level: This is the level that a connected user is allowed initially. User EXEC allows access to a limited set of basic monitoring commands. A ">" sign denotes User EXEC mode.
+
+Privileged EXEC level: Privileged EXEC level allows access to all router commands including router configuration and management commands. This level is usually password protected for security reasons. A "#"sign denotes privileged EXEC mode.
+
+When a user is connected to a Cisco IOS, a User EXEC prompt appears. Now, the user can enter privileged EXEC mode by typing the password shown as below:
+
+Router> enable
+Password: [enable password]
+Router# configure terminal
+Router(config)#
+
+Global configuration mode: "Global configuration mode" provides commands to change the system's configuration. This is typically represented by "(config)#" sign as shown in the above example.
+
+Interface configuration mode: "Interface configuration mode" provides commands to change the configuration of a specific interface of the router.  An interface configuration mode is denoted by "(config-in)#".
+
+A summary of Cisco IOS router command prompt is given below:
+
+Prompt
+	
+
+Explanation
+
+Router>
+	
+
+User EXEC mode
+
+Router#
+	
+
+Privileged EXEC mode
+
+Router(config)#
+	
+
+Global configuration mode. # sign indicates this is only accessible at privileged EXEC mode.
+
+Router(config-if)#
+	
+
+Interface level configuration mode.
+
+Router(config-router)#
+	
+
+Routing engine level within configuration mode.
+
+Router(config-line)#
+	
+
+Line level (vty, tty, async) within configuration mode.
+Context Sensitive Help
+
+Cisco IOS CLI offers context sensitive help. At any time during an EXEC session, a user can type a question mark (?) to get help.
+
+Two types of context sensitive help are available:
+
+    Word help and
+
+    Command syntax help.
+
+Word help: Word help can be used to obtain a list of commands that begin with a given character string. To use word help, type in the characters in question followed immediately by the question mark (?).  The following is an example of word help:
+
+    Router# co?
+    configure connect copy
+
+Command syntax help: Command syntax help can be used to obtain a list of commands, keyword, or argument options that are available starting with the keywords that the user had already entered. To use command syntax help, enter a question mark (?) after hitting a space.  The router will then display a list of available command options with <cr> standing for carriage return. The following is an example of command syntax help:
+
+    Router# configure ?
+    memory Configure from NV memory
+    network Configure from a TFTP network host
+    terminal Configure from the terminal
+    <cr>
+
+Cisco IOS also allows abbreviated commands support. For example, consider the following:
+
+    Router#configure terminal
+    Router(config)#
+
+    Router#config term
+    Router(config)#
+
+Both the above commands to the same job. The IOS correctly interprets the full command words. However, if there is any ambiguity, an error message is generated as below:
+
+    Router(config)#c
+    % Ambiguous command: "c"
+
